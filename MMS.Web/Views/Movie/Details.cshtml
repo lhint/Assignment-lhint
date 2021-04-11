@@ -1,0 +1,66 @@
+@model Movie
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Students</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Details</li>
+    </ol>
+</nav>
+
+<h1>Details</h1>
+
+<div class="card rounded shadow p-3">
+   <div class="row pl-3">
+        <!-- Details -->
+        <div class="col-8 mt-4">
+            <h3 class="mb-4">Student Details</h3>
+            <dl class="row">       
+                <dt class="col-5">Title</dt>
+                <dd class="col-7">@Model.Title</dd>
+
+                <dt class="col-5">Director</dt>
+                <dd class="col-7">@Model.Director</dd>
+                
+                <dt class="col-5">Year</dt>
+                <dd class="col-7">@Model.Year</dd>
+                
+                <dt class="col-5">Budget</dt>
+                <dd class="col-7">$@Model.Budget</dd>
+
+                <dt class="col-5">Genre</dt>
+                <dd class="col-7">@Model.Genre</dd>
+
+                <dt class="col-5">Cast</dt>
+                <dd class="col-7">@Model.Cast</dd>
+
+                <dt class="col-5">Rating</dt>
+                <dd class="col-7">@Model.Rating</dd>
+
+                <dt class="col-5">Plot</dt>
+                <dd class="col-7">@Model.Plot</dd>
+            </dl>               
+        </div>
+
+        <!-- Photo -->
+        <div class="col-4">
+            <img src="@Model.PosterUrl" class="img-fluid">
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-end pe-3"> 
+
+                <!-- Edit Button --> 
+                <a asp-action="UpdateMovie" asp-route-id="@Model.Id" class="btn btn-sm btn-info mr-2">
+                Edit Movie
+                </a> 
+
+                <!-- Back Button --> 
+                <a asp-controller="Student" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-light mr-2">
+                Edit Student
+                </a>  
+            </div>
+        </div>    
+    </div>
+   </div>
+</div>

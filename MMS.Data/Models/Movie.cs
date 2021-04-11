@@ -5,7 +5,7 @@ namespace MMS.Data.Models
 {
     public enum Genre
     {
-        Action, Comedy, Family, Horror, Romance, SciFi, Thriller, Western, War
+        Action, Comedy, Family, Horror, Romance, SciFi, Thriller, Western, War, Drama
     }
     
     public class Movie

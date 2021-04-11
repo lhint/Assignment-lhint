@@ -1,0 +1,47 @@
+@model IList<Movie>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Movies</li>
+    </ol>
+</nav>
+
+<div class="card text shadow">
+    <div class="card-header">
+        <h2>Movie</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Year</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.Id</td>
+                <td>@m.Title</td>
+                <td>@m.Director</td>
+                <td>@m.Year</td>
+                 <td>
+                    <!-- Add View link -->
+                    <a asp-controller="Movie" asp-action="Index" asp-route-id=@m.Id>Edit</a>
+                    <!-- Add edit link  -->
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id=@m.Id>Details</a>   
+                    <!-- Add delete link -->
+                    <a asp-controller="Movie" asp-action="Index" asp-route-id=@m.Id>Delete</a> 
+                  </td>
+            </tr>
+        }  
+    </tbody>
+</table>
+  </div>
+</div>

@@ -34,6 +34,9 @@ namespace MMS.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                //Seed movie data
+                ServiceSeeder.Seed(new MovieServiceDb());
                            
             }
             else
