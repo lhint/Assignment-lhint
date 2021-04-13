@@ -15619,6 +15619,11 @@
   "RootNamespace": "MMS.Web",
   "Documents": [
     {
+      "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Shared/_Alert.cshtml",
+      "TargetPath": "Views\\Shared\\_Alert.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -15639,6 +15644,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Movie/_DeleteModal.cshtml",
+      "TargetPath": "Views\\Movie\\_DeleteModal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -15654,6 +15664,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Movie/Edit.cshtml",
+      "TargetPath": "Views\\Movie\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -15661,6 +15676,11 @@
     {
       "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Movie/Index.cshtml",
       "TargetPath": "Views\\Movie\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/Views/Movie/Create.cshtml",
+      "TargetPath": "Views\\Movie\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

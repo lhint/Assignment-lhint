@@ -34,6 +34,11 @@ namespace MMS.Data.Services
             return db.Movies.FirstOrDefault(m => m.Id == id);
         }
 
+        public Movie GetMovieByTitle(string title)
+        {
+            return db.Movies.FirstOrDefault(m => m.Title == title);
+        }
+
         public bool DeleteMovie(int id)
         {
             var m = GetMovieById(id);
@@ -69,7 +74,7 @@ namespace MMS.Data.Services
 
         public Movie AddMovie(Movie m)
         {
-            var existing = GetMovieById(m.Id); 
+            var existing = GetMovieByTitle(m.Title); 
             if (existing != null)
             {
                 return null;

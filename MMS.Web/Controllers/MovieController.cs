@@ -10,18 +10,18 @@ namespace SMS.Web.Controllers
 {
     public class MovieController : BaseController
     {
-        private IMovieService svc;
+        private IMovieService mvc;
 
         public MovieController()
         {
-            svc = new MovieServiceDb();
+            mvc = new MovieServiceDb();
         }
 
         // GET /movie
         public IActionResult Index()
         {
             //returns all movies to an index view
-            var movies = svc.GetAllMovies();
+            var movies = mvc.GetAllMovies();
            
             return View(movies);
         }
@@ -30,7 +30,7 @@ namespace SMS.Web.Controllers
         public IActionResult Details(int id)
         {
             // retrieve the movies with specified id from the service
-            var m = svc.GetMovieById(id);
+            var m = mvc.GetMovieById(id);
 
             // check if m is null and return NotFound()
             if (m == null)
@@ -57,15 +57,17 @@ namespace SMS.Web.Controllers
         {
             // check title is unique for this movie
             //if(svc.IsDuplicateTitle(m.Title, m.Id))
-            //{
-              ModelState.AddModelError(nameof(m.Title),"Movie with this title already exists");
-            //}
+            var existing = mvc.GetMovieByTitle(m.Title); 
+            if (existing != null)
+            {
+                ModelState.AddModelError(nameof(m.Title),"Movie with this title already exists");
+            }
 
             // complete POST action to add movie
             if (ModelState.IsValid)
             {
                 // pass data to service to store 
-                svc.AddMovie(m);
+                mvc.AddMovie(m);
                 Alert("Movie Was Created", AlertType.info);
                
 
@@ -78,7 +80,7 @@ namespace SMS.Web.Controllers
 
         // GET /movie/edit/{id}
         public IActionResult Edit(int id) {
-            var m = svc.GetMovieById(id); // load the movie using the service            
+            var m = mvc.GetMovieById(id); // load the movie using the service            
             if (m == null)  {           // check if m is null and alert
                 return NotFound();
             }
@@ -100,7 +102,7 @@ namespace SMS.Web.Controllers
             if (ModelState.IsValid)
             {
                 // Pass data to service to update
-                var updated = svc.UpdateMovie(s);
+                var updated = mvc.UpdateMovie(s);
                 Alert("Movie updated", AlertType.info);
                 return RedirectToAction(nameof(Index));     
             }
@@ -112,7 +114,7 @@ namespace SMS.Web.Controllers
         public IActionResult Delete(int id)
         {
             // load the movie using the service
-            var m = svc.GetMovieById(id);
+            var m = mvc.GetMovieById(id);
             // check the returned movie is not null and if so alert
             if (m == null)
             {
@@ -127,9 +129,9 @@ namespace SMS.Web.Controllers
         [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {
-            var m1 = svc.GetMovieById(id);
+            var m1 = mvc.GetMovieById(id);
             // delete student via service
-            svc.DeleteMovie(id);
+            mvc.DeleteMovie(id);
             Alert($"Movie {m1.Id} Was Deleted", AlertType.warning);
          
             // redirect to the index view
@@ -139,7 +141,7 @@ namespace SMS.Web.Controllers
         // GET /movie/createreview
         public IActionResult CreateReview(int id)
         {
-            var s = svc.GetMovieById(id);
+            var s = mvc.GetMovieById(id);
              // check the returned movie is not null and if so alert
             if (s == null)
             {      
@@ -159,7 +161,7 @@ namespace SMS.Web.Controllers
         public IActionResult CreateReview(Review r)
         {
             // retrieve movie using t.MovieId
-            var m = svc.GetMovieById(r.MovieId);
+            var m = mvc.GetMovieById(r.MovieId);
             // check the returned movie is not null and if so alert and 
             // redirect to Index view
             if (m == null)
@@ -170,7 +172,7 @@ namespace SMS.Web.Controllers
 
             if (ModelState.IsValid)
             {
-            svc.AddReview(r);
+            mvc.AddReview(r);
             Alert("Review Was Created", AlertType.info);
             return RedirectToAction(nameof(Details),
             new { Id = r.Id } );

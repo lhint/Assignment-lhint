@@ -12,7 +12,7 @@ namespace MMS.Data.Models
     {
                 
         public int Id { get; set; }
-        
+
         // name of movie
         public string Title { get; set; }
 

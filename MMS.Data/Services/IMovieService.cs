@@ -9,6 +9,8 @@ namespace MMS.Data.Services
         void Initialise();
         IList<Movie> GetAllMovies(string order=null);
         Movie GetMovieById(int id);
+
+        Movie GetMovieByTitle(string title);
         bool DeleteMovie(int id);
         bool UpdateMovie(Movie m);
         Movie AddMovie(Movie m);
