@@ -1,0 +1,23 @@
+<table class="table table-sm">
+          <thead>
+              <tr>
+                  <th>Created</th>
+                  <th>Name</th>
+                  <th>Comment</th>
+                  <th>Rating</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach(var m in Model.Reviews)
+              {
+                  <tr>
+                      <td>@m.CreatedOn</td>
+                      <td>@m.Name</td>
+                      <td>@m.Comment</td>
+                      <td>@m.Rating</td>
+                  </tr>
+              }
+          </tbody>
+      </table>
+      

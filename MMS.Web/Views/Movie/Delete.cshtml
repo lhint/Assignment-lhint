@@ -1,0 +1,61 @@
+@model Movie
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Students</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Details" asp-route-id=@Model.Id>@Model.Title</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Delete</li>
+    </ol>
+</nav>
+
+<div>
+    <!-- display the movie using a <dl> as per Details.cshtml -->
+    <div class="col card rounded shadow pt-3">
+
+        <h3 class="mb-4">Delete @Model.Title</h3>
+
+        <h5 class="mb-4">Are you sure you want to delete @Model.Title?</h5>
+
+        <dl class="row">       
+            <dt class="col-5">Title</dt>
+            <dd class="col-7">@Model.Title</dd>
+
+            <dt class="col-5">Director</dt>
+            <dd class="col-7">@Model.Director</dd>
+            
+            <dt class="col-5">Year</dt>
+            <dd class="col-7">@Model.Year</dd>
+
+            <dt class="col-5">Duration (Minutes)</dt>
+            <dd class="col-7">@Model.Duration</dd>
+                
+            <dt class="col-5">Budget</dt>
+            <dd class="col-7">@Model.Budget</dd>
+
+            <dt class="col-5">Genre</dt>
+            <dd class="col-7">@Model.Genre</dd>
+
+            <dt class="col-5">Cast</dt>
+            <dd class="col-7">@Model.Cast</dd>
+
+            <dt class="col-5">Rating</dt>
+            <dd class="col-7">@Model.Rating</dd>
+
+            <dt class="col-5">Plot</dt>
+            <dd class="col-7">@Model.Plot</dd>
+        </dl>
+    </div>
+
+    <div class="mt-4">
+        <!-- create a form to submit post request to DeleteConfirm action  
+            Movie Id should be a hidden input field named 'Id" in the form       
+            add type submit input button                                   
+            add cancel link which calls Index action -->
+        <form asp-controller="Movie" asp-action="DeleteConfirm" type="post">
+            <input type="hidden" asp-for="Id"/>
+            <input type="submit" value="Confirm" class="btn btn-danger" />
+            <a class="btn btn-link" asp-controller="Movie" asp-action="Index">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -93,16 +93,15 @@ namespace MMS.Data.Services
             return review;
         }
 
-        public Review AddReview(Review r)
+        public Review AddReview(int movieId, string comment)
         {
-            var m = GetMovieById(r.MovieId);
+            var m = GetMovieById(movieId);
             if (m == null) return null;
 
             var review = new Review
             {
-                Id = r.Id,
-                Name = r.Name,
-                Comment = r.Comment
+                Id = movieId,
+                Comment = comment
             };
             m.Reviews.Add(review);
             db.SaveChanges();

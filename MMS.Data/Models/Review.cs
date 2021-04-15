@@ -8,10 +8,12 @@ namespace MMS.Data.Models
         public int Id { get; set; }      
 
         // name of reviewer
-        public string Name { get; set; }   
+        public string Name { get; set; }
+
+        public string Title { get; set; }
 
         // date review was made        
-        public DateTime CreatedOn { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.Now;
 
         // reviewer comments
         public string Comment { get; set; }

@@ -139,18 +139,20 @@ namespace SMS.Web.Controllers
         }
 
         // GET /movie/createreview
-        public IActionResult CreateReview(int id)
+        public IActionResult CreateReview(int id, string comment, string title)
         {
             var s = mvc.GetMovieById(id);
              // check the returned movie is not null and if so alert
             if (s == null)
             {      
-                Alert("Movie does not exist", AlertType.warning);  
-                return NotFound();
+                Alert("Movie does not exist", AlertType.warning);
+                return RedirectToAction(nameof(Index));  
+                //return NotFound();
             }  
             // create the review view model and populate the MovieId property
-            var r = new Review {
-                MovieId = id
+            var r = new ReviewViewModel {
+                MovieId = id,
+                Comment = comment
             };
  
             return View("CreateReview", r);
@@ -161,26 +163,23 @@ namespace SMS.Web.Controllers
         public IActionResult CreateReview(Review r)
         {
             // retrieve movie using t.MovieId
-            var m = mvc.GetMovieById(r.MovieId);
+            var m = mvc.GetMovieById(r.Id);
+
+            if (m == null)
+            {
+                Alert("Movie not found", AlertType.warning);
+                return RedirectToAction("Index");
+            }
             // check the returned movie is not null and if so alert and 
             // redirect to Index view
-            if (m == null)
-            {   
-                Alert("Movie does not exist", AlertType.warning);     
-                return RedirectToAction("Index");
-            }  
-
             if (ModelState.IsValid)
             {
-            mvc.AddReview(r);
+            mvc.AddReview(r.Id, r.Comment);
             Alert("Review Was Created", AlertType.info);
-            return RedirectToAction(nameof(Details),
-            new { Id = r.Id } );
-        }
+            return RedirectToAction(nameof(Details), new { Id = r.Id } );
+            }
             // redisplay the form for editing
-            return View(r); 
-
-        
+            return View("CreateReview",r);
 
             // redirect to Details view passing route parameter- new {Id = t.StudentId}
             //return RedirectToAction("Index");
