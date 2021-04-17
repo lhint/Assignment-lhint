@@ -75,6 +75,21 @@ namespace MMS.Data.Services
             mvc.AddMovie(m5);
 
             //add review
+            var r1 = new Review();
+            r1.MovieId = m1.Id;
+            r1.Title = m1.Title;
+            r1.Name = "Luke";
+            r1.Comment = "Love this film!";
+            r1.Rating = 6;
+            mvc.AddReview(r1);
+
+            var r2 = new Review();
+            r2.MovieId = m1.Id;
+            r2.Title = m1.Title;
+            r2.Name = "Luke";
+            r2.Comment = "Amazing!";
+            r2.Rating = 6;
+            mvc.AddReview(r2);
             
         }
     }

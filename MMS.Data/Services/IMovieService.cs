@@ -14,7 +14,7 @@ namespace MMS.Data.Services
         bool UpdateMovie(Movie m);
         Movie AddMovie(Movie m);
         Review GetReviewById(int id);
-        Review AddReview(int movieId, string comment);
+        Review AddReview(Review r);
         bool DeleteReview(int id);
     }
 }

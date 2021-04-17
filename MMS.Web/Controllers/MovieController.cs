@@ -146,16 +146,14 @@ namespace SMS.Web.Controllers
             if (s == null)
             {      
                 Alert("Movie does not exist", AlertType.warning);
-                return RedirectToAction(nameof(Index));  
-                //return NotFound();
+                return RedirectToAction(nameof(Index));
             }  
             // create the review view model and populate the MovieId property
-            var r = new ReviewViewModel {
-                MovieId = id,
-                Comment = comment
+            var review = new ReviewViewModel {
+                MovieId = id
             };
  
-            return View("CreateReview", r);
+            return View("CreateReview", review);
         }
 
         // POST /movie/createreview
@@ -163,7 +161,7 @@ namespace SMS.Web.Controllers
         public IActionResult CreateReview(Review r)
         {
             // retrieve movie using t.MovieId
-            var m = mvc.GetMovieById(r.Id);
+            var m = mvc.GetMovieById(r.MovieId);
 
             if (m == null)
             {
@@ -174,15 +172,21 @@ namespace SMS.Web.Controllers
             // redirect to Index view
             if (ModelState.IsValid)
             {
-            mvc.AddReview(r.Id, r.Comment);
-            Alert("Review Was Created", AlertType.info);
-            return RedirectToAction(nameof(Details), new { Id = r.Id } );
-            }
-            // redisplay the form for editing
-            return View("CreateReview",r);
+                var review = new Review {
+                    MovieId = r.MovieId,
+                    Name = r.Name,
+                    Title = r.Title,
+                    Rating = r.Rating,
+                    Comment = r.Comment,
+                };
 
+            mvc.AddReview(review);
+            Alert("Review Was Created", AlertType.info);
             // redirect to Details view passing route parameter- new {Id = t.StudentId}
-            //return RedirectToAction("Index");
+            return RedirectToAction(nameof(Details), new { Id = r.Id } );
+            // redisplay the form for editing
+            }
+            return View("CreateReview",r);
         }
 
     }

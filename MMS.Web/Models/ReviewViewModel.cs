@@ -6,15 +6,18 @@ namespace MMS.Web.Models
     public class ReviewViewModel
     {
         // selectlist of students (id, name)       
-        public SelectList Reviews { set; get; }
+        public SelectList Movies { set; get; }
 
         // Collecting StudentId and Issue in Form
         [Required]
         [Display(Name = "Select Name")]
+        public string Name { get; set; }
+        public string Title { get; set; }
         public int MovieId { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 5)]
         public string Comment { get; set; }
+        public int Rating {get; set;}
     }
 }

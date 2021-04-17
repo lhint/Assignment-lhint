@@ -31,7 +31,8 @@ namespace MMS.Data.Services
         }
         public Movie GetMovieById(int id)
         {
-            return db.Movies.FirstOrDefault(m => m.Id == id);
+            return db.Movies.Include(s => s.Reviews)
+                            .FirstOrDefault(s => s.Id == id);
         }
 
         public Movie GetMovieByTitle(string title)
@@ -93,18 +94,23 @@ namespace MMS.Data.Services
             return review;
         }
 
-        public Review AddReview(int movieId, string comment)
+        public Review AddReview(Review r)
         {
-            var m = GetMovieById(movieId);
+            var m = GetMovieById(r.MovieId);
             if (m == null) return null;
 
             var review = new Review
             {
-                Id = movieId,
-                Comment = comment
+                //Id automaticly created
+                Name = r.Name,
+                MovieId = r.MovieId,
+                Comment = r.Comment,
+                CreatedOn = DateTime.Now,
+                Rating = r.Rating
             };
             m.Reviews.Add(review);
             db.SaveChanges();
+            
             return review;
         }
 
@@ -117,6 +123,7 @@ namespace MMS.Data.Services
             //remove review
             var result = review.Movie.Reviews.Remove(review);
             db.SaveChanges();
+
             return true;
         }
     }

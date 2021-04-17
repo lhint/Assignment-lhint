@@ -9,8 +9,7 @@ namespace MMS.Data.Models
     }
     
     public class Movie
-    {
-                
+    { 
         public int Id { get; set; }
 
         // name of movie

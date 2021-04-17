@@ -9,13 +9,13 @@
               </tr>
           </thead>
           <tbody>
-              @foreach(var m in Model.Reviews)
+              @foreach(var r in Model.Reviews)
               {
                   <tr>
-                      <td>@m.CreatedOn</td>
-                      <td>@m.Name</td>
-                      <td>@m.Comment</td>
-                      <td>@m.Rating</td>
+                      <td>@r.CreatedOn</td>
+                      <td>@r.Name</td>
+                      <td>@r.Comment</td>
+                      <td>@r.Rating</td>
                   </tr>
               }
           </tbody>
