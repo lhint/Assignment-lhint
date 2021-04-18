@@ -10,7 +10,7 @@ namespace MMS.Web.Models
 
         // Collecting StudentId and Issue in Form
         [Required]
-        [Display(Name = "Select Name")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
         public string Title { get; set; }
         public int MovieId { get; set; }
@@ -18,6 +18,8 @@ namespace MMS.Web.Models
         [Required]
         [StringLength(100, MinimumLength = 5)]
         public string Comment { get; set; }
+        [Required]
+        [Range(0,10)]
         public int Rating {get; set;}
     }
 }

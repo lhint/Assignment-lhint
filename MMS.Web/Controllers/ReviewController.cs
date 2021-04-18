@@ -25,17 +25,6 @@ namespace SMS.Web.Controllers
             return View(reviews);
         }
        
-        // POST /ticket/close/{id}
-        [HttpPost]
-        public IActionResult DeleteReview(int id)
-        {   // close ticket via service
-
-           var tickets = mvc.DeleteMovie(id);
-
-            // redirect to the index view
-            return RedirectToAction(nameof(Index));
-        }
-       
         // GET /ticket/create
         public IActionResult Create()
         {

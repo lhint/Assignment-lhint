@@ -175,7 +175,6 @@ namespace SMS.Web.Controllers
                 var review = new Review {
                     MovieId = r.MovieId,
                     Name = r.Name,
-                    Title = r.Title,
                     Rating = r.Rating,
                     Comment = r.Comment,
                 };
@@ -189,5 +188,24 @@ namespace SMS.Web.Controllers
             return View("CreateReview",r);
         }
 
+        //Delete Review
+
+            public IActionResult RemoveReview(int id)
+            {  
+
+            var s = mvc.GetReviewById(id);
+             // check the returned movie is not null and if so alert
+            if (s == null)
+            {      
+                Alert("Error deleting review", AlertType.warning);
+                return RedirectToAction(nameof(Index));
+            }  
+            // create the review view model and populate the MovieId property
+            mvc.DeleteReview(id);
+
+            Alert("Review Deleted", AlertType.success);
+            //return RedirectToAction(nameof(Details));
+            return RedirectToAction(nameof(Details), new { Id = id });
+        }
     }
 }

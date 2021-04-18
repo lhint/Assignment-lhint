@@ -48,12 +48,20 @@
                 <input asp-for="Duration" class="form-control"/>
                 <span asp-validation-for="Duration" class="text-danger"></span>
             </div>
-        </div>
-
-        <div class="form-group">
+    
+            <div class="form-group col">
             <label asp-for="Budget" class="control-label"></label>
             <input asp-for="Budget" class="form-control"/>
             <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col">
+            <label asp-for="Genre" class="control-label"></label>
+            <select asp-for="Genre" class="form-control" asp-items="Html.GetEnumSelectList<Genre>()">
+            <option>Select Genre</option>
+            </select>
+            <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
         </div>
 
         <!-- add PhotoUrl input group - ensure input field type is url -->
@@ -65,7 +73,9 @@
 
         <div class="form-group">
             <label asp-for="Genre" class="control-label"></label>
-            <input asp-for="Genre" class="form-control"/>
+            <select asp-for="Genre" class="form-control" asp-items="Html.GetEnumSelectList<Genre>()">
+            <option>Select Genre</option>
+            </select>
             <span asp-validation-for="Genre" class="text-danger"></span>
         </div>
 

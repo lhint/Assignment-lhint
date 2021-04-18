@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace MMS.Data.Models
 {
@@ -13,15 +14,19 @@ namespace MMS.Data.Models
         public int Id { get; set; }
 
         // name of movie
+        [Required]
         public string Title { get; set; }
 
         // name of movie director(s)
+        [Required]
         public string Director { get; set; }     
         
         // year movie was released (integer)
+        [Required]
         public int Year { get; set; }
 
         // duration of the movie in minutes
+        [Required]
         public int Duration { get; set; }   
 
         // budget of movie in millions        
@@ -29,15 +34,19 @@ namespace MMS.Data.Models
 
         // url of a valid poster resource
         // see https://www.themoviedb.org for poster images
+        [Required]
         public string PosterUrl { get; set; } 
 
         // a genre for the movie (uses the Genre enumeration)        
         public Genre Genre { get; set; }
 
         // names of the cast members
+        [Required]
         public string Cast { get; set; }
 
-        // the general movie plot (up to approx 500 chars)
+        // the general movie plot (up to approx 5000 chars)
+        [Required]
+        [StringLength(500)]
         public string Plot { get; set; }
         
         // ReadOnly Property - Calculates Rating % based on average of all reviews

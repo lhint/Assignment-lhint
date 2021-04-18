@@ -16,8 +16,14 @@
                       <td>@r.Name</td>
                       <td>@r.Comment</td>
                       <td>@r.Rating</td>
+                      <td><a href="" data-toggle="modal" data-target="#deleteModal">Delete</a></td>
+                      <!--href included above to by pass bootstrap removing hyperlink colour-->
                   </tr>
               }
           </tbody>
       </table>
+      <!-- Add Review -->
+            <a asp-controller="Movie" asp-action="CreateReview" asp-route-id="@Model.Id" class="btn btn-sm btn-info mr-2">
+                Add Review
+            </a>
       

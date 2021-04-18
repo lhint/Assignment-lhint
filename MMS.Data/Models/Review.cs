@@ -26,6 +26,6 @@ namespace MMS.Data.Models
 
         // Navigation property
         public Movie Movie { get; set; }
- 
+
     }
 }

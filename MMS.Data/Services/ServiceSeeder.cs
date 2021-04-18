@@ -74,22 +74,41 @@ namespace MMS.Data.Services
             m5.Plot = "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.";
             mvc.AddMovie(m5);
 
+            var m6 = new Movie();
+            m6.Id = 6;
+            m6.Title = "Up!";
+            m6.Director = "Pete Docter, Bob Peterson";
+            m6.Year = 2009;
+            m6.Duration = 96;
+            m6.Budget = 175000000;
+            m6.PosterUrl = "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_.jpg";
+            m6.Cast = "Edward Asner, Jordan Nagai, John Ratzenberger";
+            m6.Plot = "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.";
+            mvc.AddMovie(m6);
+
             //add review
             var r1 = new Review();
             r1.MovieId = m1.Id;
-            r1.Title = m1.Title;
+            //r1.Title = m1.Title;
             r1.Name = "Luke";
             r1.Comment = "Love this film!";
-            r1.Rating = 6;
+            r1.Rating = 8;
             mvc.AddReview(r1);
 
             var r2 = new Review();
             r2.MovieId = m1.Id;
-            r2.Title = m1.Title;
+            //r2.Title = m1.Title;
             r2.Name = "Luke";
             r2.Comment = "Amazing!";
             r2.Rating = 6;
             mvc.AddReview(r2);
+
+            var r3 = new Review();
+            r3.MovieId = m6.Id;
+            r3.Name = "Luke";
+            r3.Comment = "I love the dog!";
+            r3.Rating = 10;
+            mvc.AddReview(r3);
             
         }
     }

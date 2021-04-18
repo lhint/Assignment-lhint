@@ -121,7 +121,7 @@ namespace MMS.Data.Services
             if (review == null) return false;
 
             //remove review
-            var result = review.Movie.Reviews.Remove(review);
+            db.Reviews.Remove(review);
             db.SaveChanges();
 
             return true;
