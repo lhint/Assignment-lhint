@@ -109,7 +109,41 @@ namespace MMS.Data.Services
             r3.Comment = "I love the dog!";
             r3.Rating = 10;
             mvc.AddReview(r3);
-            
+
+            var r4 = new Review();
+            r4.MovieId = m2.Id;
+            r4.Name = "Carl";
+            r4.Comment = "The music is great!";
+            r4.Rating = 6;
+            mvc.AddReview(r4);
+
+            var r5 = new Review();
+            r5.MovieId = m3.Id;
+            r5.Name = "Lenny";
+            r5.Comment = "Such a gripping film!";
+            r5.Rating = 8;
+            mvc.AddReview(r5);
+
+            var r6 = new Review();
+            r6.MovieId = m4.Id;
+            r6.Name = "Moe";
+            r6.Comment = "Love the effects!";
+            r6.Rating = 5;
+            mvc.AddReview(r6);
+
+            var r7 = new Review();
+            r7.MovieId = m5.Id;
+            r7.Name = "Homer";
+            r7.Comment = "The story is so good";
+            r7.Rating = 3;
+            mvc.AddReview(r7);
+
+            var r8 = new Review();
+            r8.MovieId = m6.Id;
+            r8.Name = "Marge";
+            r8.Comment = "Such a funny and sad film";
+            r8.Rating = 8;
+            mvc.AddReview(r8);
         }
     }
 }

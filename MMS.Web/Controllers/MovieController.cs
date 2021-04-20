@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using MMS.Data.Models;
 using MMS.Data.Services;
 using MMS.Web.Models;
+using MMS.Data.Repositories;
+using System.Linq;
 
 namespace SMS.Web.Controllers
 {
@@ -17,13 +19,37 @@ namespace SMS.Web.Controllers
             mvc = new MovieServiceDb();
         }
 
+        private MovieDbContext db = new MovieDbContext();
+
         // GET /movie
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder)
         {
             //returns all movies to an index view
-            var movies = mvc.GetAllMovies();
+            //https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
+            ViewBag.TitleSortParm = String.IsNullOrEmpty(sortOrder) ? "Title" : "";
+            ViewBag.YearSortParm = sortOrder == "Year" ? "Year" : "Year";
+            ViewBag.DirectorSortParm = sortOrder == "Director" ? "by_director" : "Director";
+            var movie = from m in db.Movies
+                        select m;
+            switch (sortOrder)
+            {
+                case "Title":
+                    movie = movie.OrderBy(m => m.Title);
+                break;
+                case "Year":
+                movie = movie.OrderBy(m => m.Year);
+                break;
+                case "Director":
+                movie = movie.OrderBy(m => m.Director);
+                break;
+                default:
+                movie = movie.OrderBy(m => m.Title);
+                break; 
+            }
+            return View(movie.ToList());
+            //var movies = mvc.GetAllMovies();
            
-            return View(movies);
+            //return View(movies);
         }
 
         // GET /movies/details/{id}

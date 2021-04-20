@@ -23,11 +23,18 @@
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
-                        <!-- add menu options here -->                       
+                           <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Movies
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a class="dropdown-item" @Html.ActionLink("By Title", "Index", "Movie", new { sortOrder = ViewBag.TitleSortParm })</a>
+                                    <a class="dropdown-item" @Html.ActionLink("By Year", "Index", "Movie", new { sortOrder = ViewBag.YearSortParm })</a>
+                                    <a class="dropdown-item" @Html.ActionLink("By Director", "Index", "Movie", new { sortOrder = ViewBag.DirectorSortParm })</a>
+                                </div>
+                            </div>
+                     
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Movie" asp-action="Index">Movies</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>                       

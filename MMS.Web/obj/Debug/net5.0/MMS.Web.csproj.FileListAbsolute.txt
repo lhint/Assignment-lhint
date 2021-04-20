@@ -50,7 +50,6 @@
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/MMS.Web.TagHelpers.input.cache
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/MMS.Web.TagHelpers.output.cache
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/MMS.Web.RazorCoreGenerate.cache
-/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs
@@ -66,7 +65,6 @@
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/MMS.Web.pdb
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/MMS.Web.genruntimeconfig.cache
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Home/About.cshtml.g.cs
-/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Movie/Index.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Movie/Details.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Movie/Edit.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Shared/_Alert.cshtml.g.cs
@@ -77,3 +75,5 @@
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Review/_ViewStart.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Movie/CreateReview.cshtml.g.cs
 /Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Review/_ViewImports.cshtml.g.cs
+/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/lukehinton/Library/Mobile Documents/com~apple~CloudDocs/Postgraduate Degree/6. COM741 - Web Based Application Development/Assignment/Project/Assignment-lhint/MMS.Web/obj/Debug/net5.0/Razor/Views/Movie/Index.cshtml.g.cs

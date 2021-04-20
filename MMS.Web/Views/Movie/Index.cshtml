@@ -35,12 +35,17 @@
                 <td>@m.Director</td>
                 <td>@m.Year</td>
                  <td>
+                     <div class="pipe-separated-list-container">
+                     <ul>
                     <!-- Add View link -->
-                    <a asp-controller="Movie" asp-action="Edit" asp-route-id=@m.Id>Edit</a>
+                    <li><a asp-controller="Movie" asp-action="Edit" asp-route-id=@m.Id>Edit</a></li>
                     <!-- Add edit link  -->
-                    <a asp-controller="Movie" asp-action="Details" asp-route-id=@m.Id>Details</a>   
+                    <li><a asp-controller="Movie" asp-action="Details" asp-route-id=@m.Id>Details</a></li>
+                    
                     <!-- Add delete link -->
-                    <a asp-controller="Movie" asp-action="Delete" asp-route-id=@m.Id>Delete</a>
+                    <li><a asp-controller="Movie" asp-action="Delete" asp-route-id=@m.Id>Delete</a></li>
+                    </ul>
+                    </div>
                   </td>
             </tr>
         }  

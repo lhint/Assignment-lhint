@@ -24,6 +24,29 @@ a {
   border-color: #1861ac;
 }
 
+/* Star */
+
+.checked {
+  color: orange;
+}
+
+/* Pipe menu */
+.pipe-separated-list-container {
+  overflow-x: hidden;
+}
+.pipe-separated-list-container ul {
+  list-style-type: none;
+  position: relative;
+  left: -1px;
+  padding: 0; 
+}
+.pipe-separated-list-container ul li {
+  display: inline-block;
+  line-height: 1;
+  padding: 0 0.2em;
+  border-left: 1px solid;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
