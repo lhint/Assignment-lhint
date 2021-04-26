@@ -90,12 +90,8 @@ namespace MMS.Data.Services
 
         public Review GetReviewById(int id)
         {
-            var review = db.Movies.SelectMany(r => r.Reviews).FirstOrDefault(r => r.Id == id);
-
-           // var movie = from m in db.Movies
-                        //select m;
-
-            //var review = from Id in 
+            var review = db.Movies.SelectMany(r => r.Reviews).FirstOrDefault(r => r.MovieId == id);
+            
             return review;
         }
 

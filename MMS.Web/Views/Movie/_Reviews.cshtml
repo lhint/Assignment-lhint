@@ -1,6 +1,7 @@
 <table class="table table-sm">
           <thead>
               <tr>
+                  <th>ReviewId</th>
                   <th>Created</th>
                   <th>Name</th>
                   <th>Comment</th>
@@ -12,11 +13,12 @@
               @foreach(var r in Model.Reviews)
               {
                   <tr>
+                      <td>@r.ReviewId</td>
                       <td>@r.CreatedOn</td>
                       <td>@r.Name</td>
                       <td>@r.Comment</td>
                       <td>@r.Rating</td>
-                      <td><a href="" data-toggle="modal" data-target="#deleteModal">Delete</a></td>
+                      <td><a data-toggle="modal" data-target="#deleteModal" asp-route-itemid="@r.ReviewId">Delete</a></td>
                       <!--href included above to by pass bootstrap removing hyperlink colour-->
                   </tr>
               }

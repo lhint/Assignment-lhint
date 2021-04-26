@@ -5,7 +5,7 @@ namespace MMS.Data.Models
 {
     public class Review
     {     
-        public int Id { get; set; }      
+        public int ReviewId { get; set; }      
 
         // name of reviewer
         public string Name { get; set; }

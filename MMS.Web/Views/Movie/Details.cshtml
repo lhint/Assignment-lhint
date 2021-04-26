@@ -97,6 +97,8 @@
 
             <div class="container">
             <div class="row justify-content-center pt-3 pb-3">
+
+    
             <!-- Edit Button -->
             <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-info mr-2">
                 Edit Movie
@@ -106,10 +108,12 @@
             <a asp-controller="Movie" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-sm btn-light mr-2">
                 Back to list
             </a> 
+            
            </div>
         </div>  
         </div>
    <!--Display reviews for current movie-->
+   
    <partial name="_DeleteModal"/>
    <partial name="_Reviews"/>
 </div>

@@ -208,13 +208,14 @@ namespace SMS.Web.Controllers
             mvc.AddReview(review);
             Alert("Review Was Created", AlertType.info);
             // redirect to Details view passing route parameter- new {Id = t.StudentId}
-            return RedirectToAction(nameof(Details), new { Id = r.Id } );
+            return RedirectToAction(nameof(Details), new { Id = r.ReviewId } );
             // redisplay the form for editing
             }
             return View("CreateReview",r);
         }
 
         //Delete Review
+        [HttpPost]
 
             public IActionResult RemoveReview(int id)
             {  
@@ -231,7 +232,8 @@ namespace SMS.Web.Controllers
 
             Alert("Review Deleted", AlertType.success);
             //return RedirectToAction(nameof(Details));
-            return RedirectToAction(nameof(Details), new { Id = id });
+
+            return RedirectToAction(nameof(Details), new { Id = id});
         }
     }
 }
