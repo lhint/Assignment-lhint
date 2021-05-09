@@ -75,7 +75,7 @@ namespace MMS.Data.Services
 
         public Movie AddMovie(Movie m)
         {
-            var existing = GetMovieByTitle(m.Title); 
+            var existing = GetMovieByTitle(m.Title);
             if (existing != null)
             {
                 return null;

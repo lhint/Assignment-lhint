@@ -89,7 +89,6 @@ namespace MMS.Data.Services
             //add review
             var r1 = new Review();
             r1.MovieId = m1.Id;
-            //r1.Title = m1.Title;
             r1.Name = "Luke";
             r1.Comment = "Love this film!";
             r1.Rating = 8;
@@ -97,7 +96,6 @@ namespace MMS.Data.Services
 
             var r2 = new Review();
             r2.MovieId = m1.Id;
-            //r2.Title = m1.Title;
             r2.Name = "Luke";
             r2.Comment = "Amazing!";
             r2.Rating = 6;
@@ -143,10 +141,8 @@ namespace MMS.Data.Services
             r8.Name = "Marge";
             r8.Comment = "Such a funny and sad film";
             r8.Rating = 8;
-            //mvc.AddReview(r8);
-            
-            //dotnet watch -p SMS.Web run
-            //http://0.0.0.0:5000/
+            mvc.AddReview(r8);
+
         }
     }
 }
