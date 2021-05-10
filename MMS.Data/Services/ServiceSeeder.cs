@@ -13,7 +13,6 @@ namespace MMS.Data.Services
 
             //add movie
             var m1 = new Movie();
-            m1.Id = 1;
             m1.Title = "The Simpsons Movie";
             m1.Director = "David Silverman";
             m1.Year =  2007;
@@ -26,7 +25,6 @@ namespace MMS.Data.Services
             mvc.AddMovie(m1);
 
             var m2 = new Movie();
-            m2.Id = 2;
             m2.Title = "Once";
             m2.Director = "John Carney";
             m2.Year = 2007;
@@ -39,7 +37,6 @@ namespace MMS.Data.Services
             mvc.AddMovie(m2);
 
             var m3 = new Movie();
-            m3.Id = 3;
             m3.Title = "Saving Private Ryan";
             m3.Director = "Steven Spielberg";
             m3.Year = 1998;
@@ -51,7 +48,6 @@ namespace MMS.Data.Services
             mvc.AddMovie(m3);
 
             var m4 = new Movie();
-            m4.Id = 4;
             m4.Title = "Avengers Endgame";
             m4.Director = "Anthony Russo, Joe Russo";
             m4.Year = 2019;
@@ -63,7 +59,6 @@ namespace MMS.Data.Services
             mvc.AddMovie(m4);
 
             var m5 = new Movie();
-            m5.Id = 5;
             m5.Title = "Avatar";
             m5.Director = "James Cameron";
             m5.Year = 2009;
@@ -75,7 +70,6 @@ namespace MMS.Data.Services
             mvc.AddMovie(m5);
 
             var m6 = new Movie();
-            m6.Id = 6;
             m6.Title = "Up!";
             m6.Director = "Pete Docter, Bob Peterson";
             m6.Year = 2009;
