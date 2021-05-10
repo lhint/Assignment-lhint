@@ -123,14 +123,14 @@ namespace MMS.Data.Services
             mvc.AddReview(r5);
 
             var r6 = new Review();
-            r6.MovieId = m6.Id;
+            r6.MovieId = m4.Id;
             r6.Name = "Moe";
             r6.Comment = "Love the effects!";
             r6.Rating = 5;
             mvc.AddReview(r6);
 
             var r7 = new Review();
-            r7.MovieId = m6.Id;
+            r7.MovieId = m5.Id;
             r7.Name = "Homer";
             r7.Comment = "The story is so good";
             r7.Rating = 3;
