@@ -156,7 +156,7 @@ namespace SMS.Web.Controllers
         public IActionResult DeleteConfirm(int id)
         {
             var m1 = mvc.GetMovieById(id);
-            // delete student via service
+            // delete movie via service
             mvc.DeleteMovie(id);
             Alert($"Movie {m1.Id} Was Deleted", AlertType.warning);
          
@@ -207,7 +207,7 @@ namespace SMS.Web.Controllers
 
             mvc.AddReview(review);
             Alert("Review Was Created", AlertType.info);
-            // redirect to Details view passing route parameter- new {Id = t.StudentId}
+            // redirect to Details view passing route parameter- new {Id = r.ReviewId}
             return RedirectToAction(nameof(Details), new { Id = r.ReviewId } );
             // redisplay the form for editing
             }
@@ -216,13 +216,14 @@ namespace SMS.Web.Controllers
 
         //Delete Review
         [HttpPost]
+        [ValidateAntiForgeryToken]
 
             public IActionResult RemoveReview(int id)
             {  
 
-            var s = mvc.GetReviewById(id);
+            var r = mvc.GetReviewById(id);
              // check the returned movie is not null and if so alert
-            if (s == null)
+            if (r == null)
             {      
                 Alert("Error deleting review", AlertType.warning);
                 return RedirectToAction(nameof(Index));

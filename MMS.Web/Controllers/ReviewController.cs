@@ -16,26 +16,26 @@ namespace SMS.Web.Controllers
             mvc = new MovieServiceDb();
         }
 
-        // GET /ticket/index
+        // GET /review/index
         public IActionResult Index(int id)
         {
-            // get all open tickets
+            // get review by Id
             var reviews = mvc.GetReviewById(id);
-            // pass tickets to view
+            // pass review to view
             return View(reviews);
         }
        
-        // GET /ticket/create
+        // GET /review/create
         public IActionResult Create()
         {
-            // retrieve all students
+            // retrieve all movies
             var movies = mvc.GetAllMovies();
             
-            // create a TicketViewModel and set the Students property
+            // create a ReviewViewModel and set the movies property
             var vm = new ReviewViewModel{
-                // create the select list from the list of students and use the Id and Name
+                // create the select list from the list of movies and use the Id and Name
                 // fields to populate the list
-                // to new SelectList(students,"Id","Name")
+                // to new SelectList(movies,"Id","Title")
                 Movies = new SelectList(movies,"Id", "Title")
             };
             // now display the view and pass the newly created viewmodel
@@ -43,12 +43,12 @@ namespace SMS.Web.Controllers
             return View(vm);
         }
        
-        // POST /ticket/create
+        // POST /review/create
         [HttpPost]
         public IActionResult Create(ReviewViewModel rvm)
         {
-            // if ticketviewmodel is valid
-                // create ticket
+            // if reviewviewmodel is valid
+                // create review
                 // redirect to Index
 
             if (ModelState.IsValid)
